@@ -1,9 +1,13 @@
 <!-- BEGIN:nextjs-agent-rules -->
 
-# This is NOT the Next.js you know
+# Este NO es el Next.js que conoces
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+Esta versión tiene cambios importantes — las APIs, convenciones y la estructura de archivos pueden diferir de tus datos de entrenamiento. Lee la guía relevante en `node_modules/next/dist/docs/` (resuelta desde el directorio de este archivo; en monorepos el paquete `next` puede no ser visible desde la raíz del repositorio) antes de escribir cualquier código. Presta atención a los avisos de obsolescencia.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+Este bloque es escrito y re-añadido por `next dev` — verifícalo en `node_modules/next/dist/server/lib/generate-agent-files.js`. Eliminarlo de un diff solo recrea el cambio sin commitear; commitearlo junto con tu trabajo mantiene el árbol limpio.
 
 <!-- END:nextjs-agent-rules -->
+
+## MCPs
+
+- Las capturas de pantalla de Playwright y cualquier cosa relacionada con Playwright tiene que estar en la carpeta .playwright-mcp.
