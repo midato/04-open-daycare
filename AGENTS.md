@@ -27,6 +27,7 @@ Este bloque es escrito y re-añadido por `next dev` — verifícalo en `node_mod
 
 - /spec Usaremos esta habilidad para crear las especificaciones
 - /spec-impl Usaremos esta skill para hacer las implementaciones
+- /spec-verify Verifica un spec con el agente `spec-verifier` (`.opencode/agent/spec-verifier.md`): revisa cada criterio de `Acceptance criteria` con evidencia (`npx tsc --noEmit`, `npx eslint app/`, Context7, Playwright MCP + visión), corrige fallos locales, marca los checks en el spec y entrega un reporte en tabla. No cambia `Status:` ni hace commit.
 - Hay skills locales en `.agents/skills/`: `spec` (diseña un spec en `specs/NN-slug.md`, en el idioma del prompt inicial) y `spec-impl` (implementa solo specs en estado `Approved`/`Aprobado`, creando rama `spec-NN-slug`). Nunca commitear automáticamente durante `spec-impl`.
 
 ## MCPs
