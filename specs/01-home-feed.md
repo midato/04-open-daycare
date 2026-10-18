@@ -1,6 +1,6 @@
 # SPEC 01 — Home (/) con feed idéntico a la plantilla
 
-> **Status:** Aprobado
+> **Status:** Implementado
 > **Depends on:** —
 > **Date:** 2026-10-18
 > **Objective:** Implementar el Home (/) como copia visual fiel de `references/pantallas/feed.dc.html`, con datos estáticos en TypeScript y sin autenticación ni base de datos.
@@ -83,18 +83,18 @@ Tipos de badge por `type`:
 
 ## Acceptance criteria
 
-- [ ] `npm run dev` y abrir `/` muestra el feed completo sin errores en consola.
-- [ ] No hay `<link>` de Google Fonts en el HTML; Fredoka y Nunito se sirven vía `next/font`.
-- [ ] El sidebar muestra logo «OpenDayCare / Sala Soles», botón «Nueva publicación», nav con «Feed» activo (fondo `#FBE3D8`, texto `#D9583C`) y footer «Caro Giménez · Maestra · Soles».
-- [ ] Todos los enlaces del sidebar y de los posts usan `href="#"`; ninguno navega a una ruta inexistente.
-- [ ] El header muestra «GUARDERÍA · SALA SOLES», «Buenas, Caro» y «12 niños · martes 17 jun».
-- [ ] La tarjeta compositor muestra «Compartí un momento…» con avatar «C» e ícono de cámara.
-- [ ] Se renderizan exactamente 3 posts desde el array `posts`, con badges LOGRO / ACTIVIDAD / ANUNCIO en sus colores.
-- [ ] El post de actividad incluye el placeholder de foto punteado con el texto «Foto · pintando con témperas».
-- [ ] Los contadores de likes y comentarios son texto estático; no hay `onClick` ni `useState` en likes/comentarios/editar.
-- [ ] `npx tsc --noEmit` sin errores.
-- [ ] `npx eslint app/` sin errores.
-- [ ] Comparación visual con el mockup: colores, border-radius, sombras y tipografías coinciden.
+- [x] `npm run dev` y abrir `/` muestra el feed completo sin errores en consola.
+- [x] No hay `<link>` de Google Fonts en el HTML; Fredoka y Nunito se sirven vía `next/font`.
+- [x] El sidebar muestra logo «OpenDayCare / Sala Soles», botón «Nueva publicación», nav con «Feed» activo (fondo `#FBE3D8`, texto `#D9583C`) y footer «Caro Giménez · Maestra · Soles».
+- [x] Todos los enlaces del sidebar y de los posts usan `href="#"`; ninguno navega a una ruta inexistente.
+- [x] El header muestra «GUARDERÍA · SALA SOLES», «Buenas, Caro» y «12 niños · martes 17 jun».
+- [x] La tarjeta compositor muestra «Compartí un momento…» con avatar «C» e ícono de cámara.
+- [x] Se renderizan exactamente 3 posts desde el array `posts`, con badges LOGRO / ACTIVIDAD / ANUNCIO en sus colores.
+- [x] El post de actividad incluye el placeholder de foto punteado con el texto «Foto · pintando con témperas».
+- [x] Los contadores de likes y comentarios son texto estático; no hay `onClick` ni `useState` en likes/comentarios/editar.
+- [x] `npx tsc --noEmit` sin errores.
+- [x] `npx eslint app/` sin errores.
+- [x] Comparación visual con el mockup: colores, border-radius, sombras y tipografías coinciden.
 
 ## Decisions
 
