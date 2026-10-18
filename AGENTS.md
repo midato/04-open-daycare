@@ -8,6 +8,32 @@ Este bloque es escrito y re-añadido por `next dev` — verifícalo en `node_mod
 
 <!-- END:nextjs-agent-rules -->
 
+## Stack y comandos
+
+- Next.js 16.3 (App Router), React 19, Tailwind v4 (CSS-first: `@import "tailwindcss"` en `app/globals.css`, sin `tailwind.config`), TypeScript strict, alias `@/*`.
+- Gestor de paquetes: **npm** (`package-lock.json`). El `pnpm-workspace.yaml` de la raíz es un placeholder heredado — no se usa (no hay `pnpm-lock.yaml`).
+- Comandos: `npm run dev`, `npm run build`, `npm run start`, `npm run lint`.
+- No hay suite de tests configurada. Verificación: `npx eslint app/` (limpio) y `npx tsc --noEmit`.
+- **Gotcha de lint:** `npm run lint` falla con 2 errores en `references/pantallas/support.js` (archivo generado). Ignóralos; lintea solo `app/` para verificar tu código.
+- El código del producto apenas comienza: `app/page.tsx` sigue siendo el template de `create-next-app`. No asumas que existen features ya implementadas.
+
+## Referencias de diseño
+
+- `references/pantallas/*.dc.html` son mockups interactivos en español de la app (guardería / daycare); `references/screenshots/*.png` son sus capturas. Son la fuente de verdad del diseño/UI — ábrelos en el navegador (p. ej. con Playwright) para inspeccionar antes de implementar.
+- `references/pantallas/support.js` es generado (dc-runtime), nunca editar.
+- El copy de la UI va en **español** (todo el diseño de referencia es español).
+
+## Spec Driven Development - Skills
+
+- /spec Usaremos esta habilidad para crear las especificaciones
+- /spec-impl Usaremos esta skill para hacer las implementaciones
+- Hay skills locales en `.agents/skills/`: `spec` (diseña un spec en `specs/NN-slug.md`, en el idioma del prompt inicial) y `spec-impl` (implementa solo specs en estado `Approved`/`Aprobado`, creando rama `spec-NN-slug`). Nunca commitear automáticamente durante `spec-impl`.
+
 ## MCPs
 
-- Las capturas de pantalla de Playwright y cualquier cosa relacionada con Playwright tiene que estar en la carpeta .playwright-mcp.
+- Las capturas de pantalla de Playwright y cualquier cosa relacionada con Playwright tiene que estar en la carpeta `.playwright-mcp` (gitignoreada). El MCP de Playwright ya está configurado en `opencode.json`.
+
+## Reglas de código
+
+- Usa la filosofía / conjunto de principios y buenas prácticas `Code Clean`.
+- Usa nombres, funciones, variables, clases, etc en el idioma `Inglés`.
