@@ -1,6 +1,6 @@
 # SPEC 04 — Diálogo «Agregar niño» desde /kids
 
-> **Status:** Implemented
+> **Status:** Approved
 > **Depends on:** SPEC 02
 > **Date:** 2026-10-20
 > **Objective:** Implementar el modal «Agregar niño» que se abre desde el botón de `/kids`, con validación de los tres campos obligatorios, combo de 10 salas fake y alta en memoria del array `kids`.
@@ -107,25 +107,25 @@ Reglas derivadas (no se guardan duplicadas):
 
 ## Acceptance criteria
 
-- [x] Clic en «Agregar niño» de `/kids` abre el diálogo modal sin navegar y sin recargar la página.
-- [x] El diálogo replica `agregar-nino.dc.html`: header «Cancelar | Agregar niño | Guardar» y los cinco campos con los mismos textos, colores y radios.
-- [x] El combo SALA lista exactamente 10 salas e incluye «Soles»; inicia vacío con el placeholder «Selecciona una sala…».
-- [x] La fecha se auto-formatea con barras mientras se escribe y siempre termina en el formato `dd/mm/aaaa`.
-- [x] «Guardar» con los tres campos obligatorios vacíos muestra mensajes de error en español bajo cada uno y el modal permanece abierto.
-- [x] Una fecha con formato inválido (`31/02/2020`, `99/99/9999`, incompleta) o futura muestra error de fecha y no cierra el modal.
-- [x] Seleccionar una de las 10 salas limpia el error de SALA; omitirlo lo mantiene.
-- [x] ALERGIAS y NOTAS MÉDICAS son opcionales: guardar con ambos vacíos cierra el modal sin errores.
-- [x] Cancelar, la tecla Esc y el clic en el backdrop cierran el diálogo y descartan lo escrito.
-- [x] Al reabrir el diálogo después de guardar o cancelar, el formulario arranca limpio.
-- [x] Con el formulario válido, «Guardar» cierra el modal y la tarjeta del niño nuevo aparece al final del grid.
-- [x] El encabezado de la grilla dice «TODAS LAS SALAS · {N} niños» y el contador refleja el total real.
-- [x] La tarjeta nueva navega a `/kids/{id}` y ese perfil muestra nombre, edad derivada, sala, fecha de nacimiento y fecha de ingreso.
-- [x] El perfil del niño nuevo pinta la caja «Alergias y notas» solo si se escribió alergias o notas.
-- [x] El niño nuevo muestra el badge VINCULAR (0 padres) y el orden de los 8 niños originales no cambia.
-- [x] `npx tsc --noEmit` sin errores.
-- [x] `npx eslint app/` sin errores.
-- [x] Comparación visual con el mockup: colores, radios, sombras y tipografías coinciden.
-- [x] `/` y `/kids/[id]` de los SPEC 01/02 siguen renderizando correctamente.
+- [ ] Clic en «Agregar niño» de `/kids` abre el diálogo modal sin navegar y sin recargar la página.
+- [ ] El diálogo replica `agregar-nino.dc.html`: header «Cancelar | Agregar niño | Guardar» y los cinco campos con los mismos textos, colores y radios.
+- [ ] El combo SALA lista exactamente 10 salas e incluye «Soles»; inicia vacío con el placeholder «Selecciona una sala…».
+- [ ] La fecha se auto-formatea con barras mientras se escribe y siempre termina en el formato `dd/mm/aaaa`.
+- [ ] «Guardar» con los tres campos obligatorios vacíos muestra mensajes de error en español bajo cada uno y el modal permanece abierto.
+- [ ] Una fecha con formato inválido (`31/02/2020`, `99/99/9999`, incompleta) o futura muestra error de fecha y no cierra el modal.
+- [ ] Seleccionar una de las 10 salas limpia el error de SALA; omitirlo lo mantiene.
+- [ ] ALERGIAS y NOTAS MÉDICAS son opcionales: guardar con ambos vacíos cierra el modal sin errores.
+- [ ] Cancelar, la tecla Esc y el clic en el backdrop cierran el diálogo y descartan lo escrito.
+- [ ] Al reabrir el diálogo después de guardar o cancelar, el formulario arranca limpio.
+- [ ] Con el formulario válido, «Guardar» cierra el modal y la tarjeta del niño nuevo aparece al final del grid.
+- [ ] El encabezado de la grilla dice «TODAS LAS SALAS · {N} niños» y el contador refleja el total real.
+- [ ] La tarjeta nueva navega a `/kids/{id}` y ese perfil muestra nombre, edad derivada, sala, fecha de nacimiento y fecha de ingreso.
+- [ ] El perfil del niño nuevo pinta la caja «Alergias y notas» solo si se escribió alergias o notas.
+- [ ] El niño nuevo muestra el badge VINCULAR (0 padres) y el orden de los 8 niños originales no cambia.
+- [ ] `npx tsc --noEmit` sin errores.
+- [ ] `npx eslint app/` sin errores.
+- [ ] Comparación visual con el mockup: colores, radios, sombras y tipografías coinciden.
+- [ ] `/` y `/kids/[id]` de los SPEC 01/02 siguen renderizando correctamente.
 
 ## Decisions
 
