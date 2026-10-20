@@ -1,6 +1,17 @@
+import Link from "next/link";
 import { currentUser } from "@/app/lib/data";
 
-export default function Sidebar() {
+export type SidebarNavItem = "feed" | "kids";
+
+function navItemClassName(isActive: boolean) {
+  return `flex items-center gap-3 rounded-[12px] px-3 py-[11px] text-[14.5px] ${
+    isActive
+      ? "bg-[#FBE3D8] font-extrabold text-[#D9583C]"
+      : "bg-transparent font-semibold text-[#6E6359]"
+  }`;
+}
+
+export default function Sidebar({ activeItem }: { activeItem: SidebarNavItem }) {
   return (
     <aside className="sticky top-0 flex h-screen w-[248px] flex-none flex-col border-r border-[#ECE0D0] bg-[#FFFDF9] px-4 py-6">
       <a
@@ -54,10 +65,7 @@ export default function Sidebar() {
       </a>
 
       <nav className="flex flex-1 flex-col gap-1">
-        <a
-          href="#"
-          className="flex items-center gap-3 rounded-[12px] bg-[#FBE3D8] px-3 py-[11px] text-[14.5px] font-extrabold text-[#D9583C]"
-        >
+        <Link href="/" className={navItemClassName(activeItem === "feed")}>
           <svg
             width="19"
             height="19"
@@ -72,11 +80,8 @@ export default function Sidebar() {
             <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
           </svg>
           Feed
-        </a>
-        <a
-          href="#"
-          className="flex items-center gap-3 rounded-[12px] bg-transparent px-3 py-[11px] text-[14.5px] font-semibold text-[#6E6359]"
-        >
+        </Link>
+        <Link href="/kids" className={navItemClassName(activeItem === "kids")}>
           <svg
             width="19"
             height="19"
@@ -93,7 +98,7 @@ export default function Sidebar() {
             <path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 20a5 5 0 0 1 5.5-4.9" />
           </svg>
           Niños
-        </a>
+        </Link>
         <a
           href="#"
           className="flex items-center gap-3 rounded-[12px] bg-transparent px-3 py-[11px] text-[14.5px] font-semibold text-[#6E6359]"

@@ -5,7 +5,7 @@ import { currentUser, feedMeta, posts } from "@/app/lib/data";
 export default function Home() {
   return (
     <div className="flex min-h-screen bg-[#F6ECDF]">
-      <Sidebar />
+      <Sidebar activeItem="feed" />
       <main className="h-screen min-w-0 flex-1 overflow-y-auto">
         <div className="mx-auto w-full max-w-[760px] px-10 pt-[34px] pb-20">
           <header className="mb-6">
