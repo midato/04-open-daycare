@@ -277,3 +277,18 @@ export const posts: FeedPost[] = [
     comments: 0,
   },
 ];
+
+export const loginDefaults = {
+  email: "caro@opendaycare.com",
+};
+
+export const invitation = {
+  code: "7K4P9",
+  email: "lucia.fernandez@gmail.com",
+  password: "contraseña",
+  childName: "Mateo",
+  roomLabel: "Sala Soles",
+  initial: "M",
+  avatarBg: "#A9D9E8",
+  avatarFg: "#1F7A93",
+};
