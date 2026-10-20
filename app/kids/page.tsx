@@ -1,3 +1,4 @@
+import AddKidDialog from "@/app/components/AddKidDialog";
 import KidCard from "@/app/components/KidCard";
 import Sidebar from "@/app/components/Sidebar";
 import { kids } from "@/app/lib/data";
@@ -17,25 +18,7 @@ export default function Kids() {
                 Niños
               </h1>
             </div>
-            <a
-              href="#"
-              className="flex items-center gap-2 rounded-[14px] bg-[linear-gradient(180deg,#F4977E,#EE8164)] px-[18px] py-[11px] text-[14.5px] font-extrabold text-white shadow-[0_8px_18px_-8px_rgba(238,129,100,0.7)]"
-            >
-              <svg
-                width="17"
-                height="17"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 5v14M5 12h14" />
-              </svg>
-              Agregar niño
-            </a>
+            <AddKidDialog />
           </div>
 
           <div className="mb-[22px] flex items-center gap-[11px] rounded-[14px] border border-[#ECE0D0] bg-[#FFFDF9] px-4 py-3">
@@ -61,7 +44,7 @@ export default function Kids() {
 
           <div className="mb-3.5 flex items-center gap-3">
             <span className="text-[12.5px] font-extrabold tracking-[0.8px] text-[#3F362E]">
-              SALA SOLES
+              TODAS LAS SALAS ·
             </span>
             <span className="text-[13px] text-[#A89A8B]">
               {kids.length} niños
