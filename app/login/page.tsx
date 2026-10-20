@@ -43,7 +43,7 @@ export default function LoginPage() {
             compartido con su familia.
           </h1>
           <p className="m-0 max-w-[430px] text-[17px] leading-[1.6] text-white/92">
-            Publicá momentos, gestioná las salas y mantené a las familias cerca,
+            Publica momentos, gestiona las salas y mantén a las familias cerca,
             desde un solo lugar.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function LoginPage() {
             Iniciar sesión
           </h2>
           <p className="mb-7 text-[15px] text-[#94887B]">
-            Ingresá para ver el día de hoy.
+            Ingresa para ver el día de hoy.
           </p>
 
           <div className="mb-[9px] text-[12px] font-bold tracking-[0.7px] text-[#94887B]">
@@ -100,7 +100,7 @@ export default function LoginPage() {
               href="/activate-account"
               className="font-extrabold text-[#C5503A]"
             >
-              Activá tu cuenta
+              Activa tu cuenta
             </Link>
           </p>
         </div>

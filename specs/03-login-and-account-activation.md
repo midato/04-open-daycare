@@ -10,12 +10,12 @@
 **In:**
 
 - Ruta `/login` (`app/login/page.tsx`): pantalla completa a dos columnas **sin sidebar**. Panel izquierdo con gradiente `#F6A98E→#EC7E62`, logo OpenDayCare, titular, subtítulo, «🌿 Guardería Sala Soles» y círculos decorativos (`overflow-hidden`).
-- Formulario de login: «Iniciar sesión», subtítulo, EMAIL precargado (`caro@opendaycare.com`), CONTRASEÑA vacía con placeholder `••••••••`, «¿Olvidaste tu contraseña?» sin acción, botón «Iniciar sesión» → `/`, link «Activá tu cuenta» → `/activate-account`.
+- Formulario de login: «Iniciar sesión», subtítulo, EMAIL precargado (`caro@opendaycare.com`), CONTRASEÑA vacía con placeholder `••••••••`, «¿Olvidaste tu contraseña?» sin acción, botón «Iniciar sesión» → `/`, link «Activa tu cuenta» → `/activate-account`.
 - **Sin** la sección «INGRESO COMO» (botones Personal / Familia) — excluida a pedido del usuario.
 - Ruta `/activate-account` (`app/activate-account/page.tsx`): pantalla centrada, sin sidebar. Logo gradiente, título «Bienvenida a OpenDayCare», subtítulo, card de invitación (avatar «M», «Mateo · Sala Soles»).
 - Campos precargados como el mockup: código `7K4P9`, email `lucia.fernandez@gmail.com`, contraseña precargada. Inputs uncontrolled (`defaultValue`), sin `useState`.
 - Checkbox nativo de consentimiento de fotos con `defaultChecked` (marcado, sin validación).
-- Botón «Activar mi cuenta» → `/`; link «¿Ya tenés cuenta? Iniciar sesión» → `/login`.
+- Botón «Activar mi cuenta» → `/`; link «¿Ya tienes cuenta? Iniciar sesión» → `/login`.
 - Datos de la invitación y defaults de login en `app/lib/data.ts`.
 - Actualizar `Sidebar.tsx`: botón de logout `href="#"` → `href="/login"`.
 
@@ -68,7 +68,7 @@ export const invitation = {
 - [x] El email del login viene precargado con `caro@opendaycare.com`; la contraseña está vacía con placeholder `••••••••`.
 - [x] «¿Olvidaste tu contraseña?» no navega ni dispara ninguna acción.
 - [x] El botón «Iniciar sesión» navega a `/`.
-- [x] El link «Activá tu cuenta» navega a `/activate-account`.
+- [x] El link «Activa tu cuenta» navega a `/activate-account`.
 - [x] `/activate-account` muestra la card de invitación con avatar «M» y «Mateo · Sala Soles».
 - [x] Código precargado `7K4P9`, email `lucia.fernandez@gmail.com` y contraseña precargada en sus inputs.
 - [x] El consentimiento de fotos es un `<input type="checkbox">` nativo y viene marcado.

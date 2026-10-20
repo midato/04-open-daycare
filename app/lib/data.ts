@@ -239,6 +239,106 @@ export const kids: Kid[] = [
   },
 ];
 
+export const rooms: string[] = [
+  "Soles",
+  "Lunas",
+  "Estrellas",
+  "Nubes",
+  "Arcoíris",
+  "Mariposas",
+  "Peces",
+  "Dinosaurios",
+  "Globos",
+  "Ballenas",
+];
+
+export const avatarPalette: { bg: string; fg: string }[] = [
+  { bg: "#A9D9E8", fg: "#1F7A93" },
+  { bg: "#F4B8CC", fg: "#C44A7A" },
+  { bg: "#B9DEC4", fg: "#3E8B62" },
+  { bg: "#F4DC8E", fg: "#9A7B1E" },
+  { bg: "#C9B6E8", fg: "#7B5FC0" },
+  { bg: "#A9C7E8", fg: "#1F7A93" },
+];
+
+const spanishMonthAbbreviations = [
+  "ene",
+  "feb",
+  "mar",
+  "abr",
+  "may",
+  "jun",
+  "jul",
+  "ago",
+  "sep",
+  "oct",
+  "nov",
+  "dic",
+];
+
+function getCompleteMonths(birthDate: Date, reference: Date): number {
+  let months =
+    (reference.getFullYear() - birthDate.getFullYear()) * 12 +
+    (reference.getMonth() - birthDate.getMonth());
+  if (reference.getDate() < birthDate.getDate()) {
+    months -= 1;
+  }
+  return Math.max(months, 0);
+}
+
+export function slugifyKidId(fullName: string): string {
+  const base =
+    fullName
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "kid";
+
+  let candidate = base;
+  let suffix = 2;
+  while (kids.some((kid) => kid.id === candidate)) {
+    candidate = `${base}-${suffix}`;
+    suffix += 1;
+  }
+  return candidate;
+}
+
+export function computeAgeLabel(birthDate: Date): string {
+  const now = new Date();
+  const years = now.getFullYear() - birthDate.getFullYear();
+  const hadBirthday =
+    now.getMonth() > birthDate.getMonth() ||
+    (now.getMonth() === birthDate.getMonth() &&
+      now.getDate() >= birthDate.getDate());
+
+  if (hadBirthday) {
+    return years === 1 ? "1 año" : `${years} años`;
+  }
+
+  const ageInYears = years - 1;
+  if (ageInYears >= 1) {
+    return ageInYears === 1 ? "1 año" : `${ageInYears} años`;
+  }
+
+  const months = getCompleteMonths(birthDate, now);
+  if (months <= 0) {
+    return "Menos de 1 mes";
+  }
+  return months === 1 ? "1 mes" : `${months} meses`;
+}
+
+export function formatBirthDateLabel(birthDate: Date): string {
+  const day = birthDate.getDate();
+  const month = spanishMonthAbbreviations[birthDate.getMonth()];
+  return `${day} ${month} ${birthDate.getFullYear()}`;
+}
+
+export function formatJoinedLabel(date: Date): string {
+  const month = spanishMonthAbbreviations[date.getMonth()];
+  return `${month} ${date.getFullYear()}`;
+}
+
 export const posts: FeedPost[] = [
   {
     id: "post-1",
