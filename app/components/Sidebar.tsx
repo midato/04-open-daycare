@@ -154,7 +154,7 @@ export default function Sidebar({ activeItem }: { activeItem: SidebarNavItem }) 
             </span>
           </span>
           <a
-            href="#"
+            href="/login"
             title="Cerrar sesión"
             className="flex h-8 w-8 flex-none items-center justify-center rounded-[10px] bg-[#F6ECDF] text-[#94887B]"
           >
