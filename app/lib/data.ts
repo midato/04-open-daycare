@@ -261,6 +261,8 @@ export const avatarPalette: { bg: string; fg: string }[] = [
   { bg: "#A9C7E8", fg: "#1F7A93" },
 ];
 
+export const parentescoOptions = ["Mamá", "Papá", "Tutor/a"] as const;
+
 const spanishMonthAbbreviations = [
   "ene",
   "feb",

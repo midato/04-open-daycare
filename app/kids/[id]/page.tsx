@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Sidebar from "@/app/components/Sidebar";
+import LinkParentDialog from "@/app/components/LinkParentDialog";
 import { kids, type KidParent } from "@/app/lib/data";
 
 const parentBadges: Record<
@@ -205,26 +206,7 @@ export default async function KidProfile({
                       </div>
                     );
                   })}
-                  <a href="#" className="flex items-center gap-3 pt-2">
-                    <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full border-[1.5px] border-dashed border-[#D8CBBA] text-[#B0A290]">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden="true"
-                      >
-                        <path d="M12 5v14M5 12h14" />
-                      </svg>
-                    </span>
-                    <span className="text-[14.5px] font-extrabold text-[#C5503A]">
-                      Vincular otro padre
-                    </span>
-                  </a>
+                  <LinkParentDialog kidFullName={kid.fullName} />
                 </div>
               </div>
             </div>
