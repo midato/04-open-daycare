@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { currentUser } from "@/app/lib/data";
+import CreatePostDialog from "@/app/components/CreatePostDialog";
 
 export type SidebarNavItem = "feed" | "kids";
 
@@ -44,25 +45,7 @@ export default function Sidebar({ activeItem }: { activeItem: SidebarNavItem }) 
         </span>
       </a>
 
-      <a
-        href="#"
-        className="mb-[18px] flex w-full items-center justify-center gap-2 rounded-[14px] bg-[linear-gradient(180deg,#F4977E,#EE8164)] p-3 text-[14.5px] font-extrabold text-white shadow-[0_8px_18px_-8px_rgba(238,129,100,0.75)]"
-      >
-        <svg
-          width="17"
-          height="17"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M12 5v14M5 12h14" />
-        </svg>
-        Nueva publicación
-      </a>
+      <CreatePostDialog />
 
       <nav className="flex flex-1 flex-col gap-1">
         <Link href="/" className={navItemClassName(activeItem === "feed")}>
