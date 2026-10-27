@@ -17,6 +17,13 @@ Este bloque es escrito y re-añadido por `next dev` — verifícalo en `node_mod
 - **Gotcha de lint:** `npm run lint` falla con 2 errores en `references/pantallas/support.js` (archivo generado). Ignóralos; lintea solo `app/` para verificar tu código.
 - El template de `create-next-app` ya no existe: están implementadas las rutas `/` (feed), `/login`, `/activate-account`, `/kids` y `/kids/[id]`. `specs/` es la fuente de verdad de qué está hecho y qué no — revisa el `Status:` de cada uno antes de asumir algo.
 
+## Supabase
+
+- Backend del proyecto. El MCP de Supabase está configurado a nivel global (`~/.config/opencode/opencode.jsonc`) como servidor remoto (`https://mcp.supabase.com/mcp`) contra el proyecto `lcbmchkaroygmtzdkvjk`, con features `docs`, `account`, `database`, `debugging`, `development`, `functions` y `branching` (autenticación vía OAuth; no requiere token manual).
+- No hay scaffold del CLI Supabase en el repo (no existe `supabase/` ni `config.toml`): el esquema vive en la BD y su fuente de verdad documental es la referencia de proyecto `docs` (`../07-DB-Schema`). Cualquier cambio de esquema debe implementarse como script de migración.
+- `.env` define `SUPABASE_DB_URL` y `SUPABASE_DB_PASSWORD` (Postgres local de desarrollo; ver `.env.example` para el formato). Nunca commitear `.env` ni copiar credenciales a otros archivos.
+- Al tocar cualquier cosa de Supabase (BD, Auth, RLS, migraciones, debugging), carga la skill `supabase`; antes de escribir o modificar SQL/esquema en Postgres, carga `supabase-postgres-best-practices`.
+
 ## Referencias de diseño
 
 - `references/pantallas/*.dc.html` son mockups interactivos en español de la app (guardería / daycare); `references/screenshots/*.png` son sus capturas. Son la fuente de verdad del diseño/UI — ábrelos en el navegador (p. ej. con Playwright) para inspeccionar antes de implementar.
@@ -28,7 +35,7 @@ Este bloque es escrito y re-añadido por `next dev` — verifícalo en `node_mod
 - /spec Usaremos esta habilidad para crear las especificaciones
 - /spec-impl Usaremos esta skill para hacer las implementaciones
 - /spec-verify Verifica un spec con el agente `spec-verifier` (`.opencode/agent/spec-verifier.md`): revisa cada criterio de `Acceptance criteria` con evidencia (`npx tsc --noEmit`, `npx eslint app/`, Context7, Playwright MCP + visión), corrige fallos locales, marca los checks en el spec y entrega un reporte en tabla. No cambia `Status:` ni hace commit.
-- Hay skills locales en `.agents/skills/`: `spec` (diseña un spec en `specs/NN-slug.md`, en el idioma del prompt inicial) y `spec-impl` (implementa solo specs en estado `Approved`/`Aprobado`, creando rama `spec-NN-slug`). Nunca commitear automáticamente durante `spec-impl`.
+- Hay skills locales en `.agents/skills/`: `spec` (diseña un spec en `specs/NN-slug.md`, en el idioma del prompt inicial), `spec-impl` (implementa solo specs en estado `Approved`/`Aprobado`, creando rama `spec-NN-slug`; nunca commitear automáticamente) y, de la colección oficial `supabase/agent-skills`: `supabase` (cualquier tarea que toque Supabase: Database, Auth, Edge Functions, Realtime, Storage, RLS, CLI/MCP, debugging y logs) y `supabase-postgres-best-practices` (carga **antes** de escribir o cambiar algo que viva en Postgres: tablas, columnas, índices, funciones, triggers, RLS, migraciones o diagnóstico de rendimiento).
 
 ## MCPs
 
