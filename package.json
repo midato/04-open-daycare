@@ -10,6 +10,7 @@
     "seed:daycare": "node --env-file-if-exists=.env.daycare.local scripts/seed-daycare.mjs"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.118.0",
     "next": "16.3.6",
     "react": "19.2.8",
