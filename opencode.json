@@ -12,7 +12,7 @@
     }
   },
   "references": {
-    "docs": {
+    "db-schema": {
       "path": "../07-DB-Schema",
       "description": "Esquema de base de datos y documentación de tablas, columnas, relaciones y referencias a crear. Esto o está implementado en la base de datos, o es un cambio que se debe realizar. Se debe crear un script de migración para implementar los cambios."
     }
