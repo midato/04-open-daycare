@@ -20,7 +20,7 @@ Este bloque es escrito y re-añadido por `next dev` — verifícalo en `node_mod
 ## Supabase
 
 - Backend del proyecto. El MCP de Supabase está configurado a nivel global (`~/.config/opencode/opencode.jsonc`) como servidor remoto (`https://mcp.supabase.com/mcp`) contra el proyecto `lcbmchkaroygmtzdkvjk`, con features `docs`, `account`, `database`, `debugging`, `development`, `functions` y `branching` (autenticación vía OAuth; no requiere token manual).
-- No hay scaffold del CLI Supabase en el repo (no existe `supabase/` ni `config.toml`): el esquema vive en la BD y su fuente de verdad documental es la referencia de proyecto `docs` (`../07-DB-Schema`). Cualquier cambio de esquema debe implementarse como script de migración.
+- El proyecto usa migraciones versionadas en `supabase/migrations/`. Siempre que se manipule la base de datos (esquema, RLS, privileges, triggers, funciones, índices, constraints o migraciones), el cambio debe registrarse como una migración SQL nueva. No ejecutar DDL aislado como cambio permanente; las consultas SQL directas solo sirven para leer datos o verificar el estado, no para modificar el esquema.
 - `.env` define `SUPABASE_DB_URL` y `SUPABASE_DB_PASSWORD` (Postgres local de desarrollo; ver `.env.example` para el formato). Nunca commitear `.env` ni copiar credenciales a otros archivos.
 - Al tocar cualquier cosa de Supabase (BD, Auth, RLS, migraciones, debugging), carga la skill `supabase`; antes de escribir o modificar SQL/esquema en Postgres, carga `supabase-postgres-best-practices`.
 
