@@ -1,0 +1,39 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - complementary [ref=f3e3]:
+      - link "OpenDayCare Sala Soles" [ref=f3e4] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f3e9]:
+          - generic [ref=f3e10]: OpenDayCare
+          - generic [ref=f3e11]: Sala Soles
+      - link "Nueva publicación" [ref=f3e12] [cursor=pointer]:
+        - /url: "#"
+      - navigation [ref=f3e15]:
+        - link "Feed" [ref=f3e16] [cursor=pointer]:
+          - /url: /
+        - link "Niños" [ref=f3e19] [cursor=pointer]:
+          - /url: /kids
+        - link "Avisos" [ref=f3e24] [cursor=pointer]:
+          - /url: "#"
+        - link "Mi cuenta" [ref=f3e27] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f3e32]:
+        - generic [ref=f3e33]: C
+        - generic [ref=f3e34]:
+          - generic [ref=f3e35]: Caro Giménez
+          - generic [ref=f3e36]: Maestra · Soles
+        - link "Cerrar sesión" [ref=f3e37] [cursor=pointer]:
+          - /url: "#"
+    - main [ref=f3e40]:
+      - generic [ref=f3e41]:
+        - generic [ref=f3e42]:
+          - generic [ref=f3e43]:
+            - generic [ref=f3e44]: GESTIÓN
+            - heading "Niños" [level=1] [ref=f3e45]
+          - link "Agregar niño" [ref=f3e46] [cursor=pointer]:
+            - /url: "#"
+        - textbox "Buscar niño…" [ref=f3e53]
+        - generic [ref=f3e54]:
+          - generic [ref=f3e55]: SALA SOLES
+          - generic [ref=f3e56]: 8 niños
+  - button "Open Next.js Dev Tools" [ref=f3e63] [cursor=pointer]

@@ -1,0 +1,4 @@
+::1 - - [23/Oct/2026 22:40:09] "GET /crear-publicacion.dc.html HTTP/1.1" 200 -
+::1 - - [23/Oct/2026 22:40:13] "GET /crear-publicacion.dc.html HTTP/1.1" 200 -
+::1 - - [23/Oct/2026 22:40:13] code 404, message File not found
+::1 - - [23/Oct/2026 22:40:13] "GET /favicon.ico HTTP/1.1" 404 -

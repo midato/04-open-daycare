@@ -1,0 +1,26 @@
+- generic [active] [ref=f3e1]:
+  - button "Open Next.js Dev Tools" [ref=f3e33] [cursor=pointer]
+  - alert [ref=f3e37]: Bienvenida a OpenDayCare
+  - generic [ref=f3e39]:
+    - heading "Bienvenida a OpenDayCare" [level=1] [ref=f3e44]
+    - paragraph [ref=f3e45]: Te invitaron a seguir el día de tu hijo. Creá tu contraseña para activar la cuenta.
+    - generic [ref=f3e46]:
+      - generic [ref=f3e47]: M
+      - generic [ref=f3e48]:
+        - generic [ref=f3e49]: Te invitaron a seguir a
+        - generic [ref=f3e50]: Mateo · Sala Soles
+    - generic [ref=f3e51]: CÓDIGO DE INVITACIÓN
+    - textbox [ref=f3e52]: 7K4P9
+    - generic [ref=f3e53]: EMAIL
+    - textbox [ref=f3e54]: lucia.fernandez@gmail.com
+    - generic [ref=f3e55]: CREAR CONTRASEÑA
+    - textbox [ref=f3e56]: contraseña
+    - generic [ref=f3e57] [cursor=pointer]:
+      - checkbox "Autorizo a la guardería a tomar y compartir fotos de mi hijo dentro de la app." [checked] [ref=f3e58]
+      - generic [ref=f3e59]: Autorizo a la guardería a tomar y compartir fotos de mi hijo dentro de la app.
+    - link "Activar mi cuenta" [ref=f3e60] [cursor=pointer]:
+      - /url: /
+    - paragraph [ref=f3e61]:
+      - text: ¿Ya tenés cuenta?
+      - link "Iniciar sesión" [ref=f3e62] [cursor=pointer]:
+        - /url: /login

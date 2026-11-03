@@ -1,0 +1,24 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e2]:
+    - generic [ref=f5e3]:
+      - generic [ref=f5e6]: OpenDayCare
+      - generic [ref=f5e12]:
+        - heading "El día de cada niño, compartido con su familia." [level=1] [ref=f5e13]: El día de cada niño,compartido con su familia.
+        - paragraph [ref=f5e14]: Publicá momentos, gestioná las salas y mantené a las familias cerca, desde un solo lugar.
+      - generic [ref=f5e15]: 🌿 Guardería Sala Soles
+    - generic [ref=f5e17]:
+      - heading "Iniciar sesión" [level=2] [ref=f5e18]
+      - paragraph [ref=f5e19]: Ingresá para ver el día de hoy.
+      - generic [ref=f5e20]: EMAIL
+      - textbox [ref=f5e21]: caro@opendaycare.com
+      - generic [ref=f5e22]: CONTRASEÑA
+      - textbox "••••••••" [ref=f5e23]
+      - generic [ref=f5e24]: ¿Olvidaste tu contraseña?
+      - link "Iniciar sesión" [ref=f5e25] [cursor=pointer]:
+        - /url: /
+      - paragraph [ref=f5e26]:
+        - text: ¿Te invitó la guardería?
+        - link "Activá tu cuenta" [ref=f5e27] [cursor=pointer]:
+          - /url: /activate-account
+  - button "Open Next.js Dev Tools" [ref=f5e33] [cursor=pointer]
+  - alert [ref=f5e37]

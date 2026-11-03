@@ -1,0 +1,91 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - complementary [ref=f4e3]:
+      - link "OpenDayCare Sala Soles" [ref=f4e4] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f4e9]:
+          - generic [ref=f4e10]: OpenDayCare
+          - generic [ref=f4e11]: Sala Soles
+      - link "Nueva publicación" [ref=f4e12] [cursor=pointer]:
+        - /url: "#"
+      - navigation [ref=f4e15]:
+        - link "Feed" [ref=f4e16] [cursor=pointer]:
+          - /url: /
+        - link "Niños" [ref=f4e19] [cursor=pointer]:
+          - /url: /kids
+        - link "Avisos" [ref=f4e24] [cursor=pointer]:
+          - /url: "#"
+        - link "Mi cuenta" [ref=f4e27] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f4e32]:
+        - generic [ref=f4e33]: C
+        - generic [ref=f4e34]:
+          - generic [ref=f4e35]: Caro Giménez
+          - generic [ref=f4e36]: Maestra · Soles
+        - link "Cerrar sesión" [ref=f4e37] [cursor=pointer]:
+          - /url: "#"
+    - main [ref=f4e40]:
+      - generic [ref=f4e41]:
+        - generic [ref=f4e42]:
+          - generic [ref=f4e43]:
+            - generic [ref=f4e44]: GESTIÓN
+            - heading "Niños" [level=1] [ref=f4e45]
+          - link "Agregar niño" [ref=f4e46] [cursor=pointer]:
+            - /url: "#"
+        - textbox "Buscar niño…" [ref=f4e53]
+        - generic [ref=f4e54]:
+          - generic [ref=f4e55]: SALA SOLES
+          - generic [ref=f4e56]: 8 niños
+        - generic [ref=f4e58]:
+          - link "M Mateo Fernández 3 años · 2 padres vinculados MANÍ" [ref=f4e59] [cursor=pointer]:
+            - /url: /kids/mateo-fernandez
+            - generic [ref=f4e60]: M
+            - generic [ref=f4e61]:
+              - generic [ref=f4e62]: Mateo Fernández
+              - generic [ref=f4e63]: 3 años · 2 padres vinculados
+            - generic [ref=f4e64]: MANÍ
+          - link "S Sofía Méndez 2 años · 1 padre vinculado" [ref=f4e65] [cursor=pointer]:
+            - /url: /kids/sofia-mendez
+            - generic [ref=f4e66]: S
+            - generic [ref=f4e67]:
+              - generic [ref=f4e68]: Sofía Méndez
+              - generic [ref=f4e69]: 2 años · 1 padre vinculado
+          - link "B Benjamín Ruiz 3 años · 2 padres vinculados" [ref=f4e72] [cursor=pointer]:
+            - /url: /kids/benjamin-ruiz
+            - generic [ref=f4e73]: B
+            - generic [ref=f4e74]:
+              - generic [ref=f4e75]: Benjamín Ruiz
+              - generic [ref=f4e76]: 3 años · 2 padres vinculados
+          - link "V Valentina Soto 2 años · sin padres vinculados VINCULAR" [ref=f4e79] [cursor=pointer]:
+            - /url: /kids/valentina-soto
+            - generic [ref=f4e80]: V
+            - generic [ref=f4e81]:
+              - generic [ref=f4e82]: Valentina Soto
+              - generic [ref=f4e83]: 2 años · sin padres vinculados
+            - generic [ref=f4e84]: VINCULAR
+          - link "T Tomás Díaz 3 años · 1 padre vinculado LACTOSA" [ref=f4e85] [cursor=pointer]:
+            - /url: /kids/tomas-diaz
+            - generic [ref=f4e86]: T
+            - generic [ref=f4e87]:
+              - generic [ref=f4e88]: Tomás Díaz
+              - generic [ref=f4e89]: 3 años · 1 padre vinculado
+            - generic [ref=f4e90]: LACTOSA
+          - link "E Emma Castro 2 años · 1 padre vinculado" [ref=f4e91] [cursor=pointer]:
+            - /url: /kids/emma-castro
+            - generic [ref=f4e92]: E
+            - generic [ref=f4e93]:
+              - generic [ref=f4e94]: Emma Castro
+              - generic [ref=f4e95]: 2 años · 1 padre vinculado
+          - link "L Lucas Romero 3 años · 1 padre vinculado" [ref=f4e98] [cursor=pointer]:
+            - /url: /kids/lucas-romero
+            - generic [ref=f4e99]: L
+            - generic [ref=f4e100]:
+              - generic [ref=f4e101]: Lucas Romero
+              - generic [ref=f4e102]: 3 años · 1 padre vinculado
+          - link "O Olivia Vega 2 años · 1 padre vinculado" [ref=f4e105] [cursor=pointer]:
+            - /url: /kids/olivia-vega
+            - generic [ref=f4e106]: O
+            - generic [ref=f4e107]:
+              - generic [ref=f4e108]: Olivia Vega
+              - generic [ref=f4e109]: 2 años · 1 padre vinculado
+  - button "Open Next.js Dev Tools" [ref=f4e117] [cursor=pointer]

@@ -1,0 +1,73 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - complementary [ref=f8e3]:
+      - link "OpenDayCare Sala Soles" [ref=f8e4] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=f8e9]:
+          - generic [ref=f8e10]: OpenDayCare
+          - generic [ref=f8e11]: Sala Soles
+      - link "Nueva publicación" [ref=f8e12] [cursor=pointer]:
+        - /url: "#"
+      - navigation [ref=f8e15]:
+        - link "Feed" [ref=f8e16] [cursor=pointer]:
+          - /url: /
+        - link "Niños" [ref=f8e19] [cursor=pointer]:
+          - /url: /kids
+        - link "Avisos" [ref=f8e24] [cursor=pointer]:
+          - /url: "#"
+        - link "Mi cuenta" [ref=f8e27] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=f8e32]:
+        - generic [ref=f8e33]: C
+        - generic [ref=f8e34]:
+          - generic [ref=f8e35]: Caro Giménez
+          - generic [ref=f8e36]: Maestra · Soles
+        - link "Cerrar sesión" [ref=f8e37] [cursor=pointer]:
+          - /url: "#"
+    - main [ref=f8e40]:
+      - generic [ref=f8e41]:
+        - link "Volver a Niños" [ref=f8e42] [cursor=pointer]:
+          - /url: /kids
+        - generic [ref=f8e45]:
+          - generic [ref=f8e46]:
+            - generic [ref=f8e47]:
+              - generic [ref=f8e48]: M
+              - generic [ref=f8e49]:
+                - heading "Mateo Fernández" [level=1] [ref=f8e50]
+                - paragraph [ref=f8e51]: 3 años · Sala Soles
+              - link "Editar" [ref=f8e52] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f8e58]:
+              - generic [ref=f8e59]: Alergias y notas
+              - generic [ref=f8e60]: Alergia al maní. Evitar frutos secos. Lleva inhalador en la mochila.
+            - generic [ref=f8e61]:
+              - generic [ref=f8e62]:
+                - generic [ref=f8e63]: Fecha de nacimiento
+                - generic [ref=f8e64]: 12 mar 2022
+              - generic [ref=f8e65]:
+                - generic [ref=f8e66]: Sala
+                - generic [ref=f8e67]: Soles
+              - generic [ref=f8e68]:
+                - generic [ref=f8e69]: Ingreso
+                - generic [ref=f8e70]: feb 2025
+          - generic [ref=f8e71]:
+            - link "Resumen del día" [ref=f8e72] [cursor=pointer]:
+              - /url: "#"
+            - generic [ref=f8e76]:
+              - generic [ref=f8e77]: PADRES VINCULADOS
+              - generic [ref=f8e78]:
+                - generic [ref=f8e79]:
+                  - generic [ref=f8e80]: L
+                  - generic [ref=f8e81]:
+                    - generic [ref=f8e82]: Lucía Fernández
+                    - generic [ref=f8e83]: Mamá · activa
+                  - generic [ref=f8e84]: ACTIVA
+                - generic [ref=f8e85]:
+                  - generic [ref=f8e86]: D
+                  - generic [ref=f8e87]:
+                    - generic [ref=f8e88]: Diego Fernández
+                    - generic [ref=f8e89]: Papá · invitación enviada
+                  - generic [ref=f8e90]: PENDIENTE
+                - link "Vincular otro padre" [ref=f8e91] [cursor=pointer]:
+                  - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=f8e101] [cursor=pointer]

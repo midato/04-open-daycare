@@ -1,0 +1,61 @@
+- generic [ref=e4]:
+  - complementary [ref=e5]:
+    - link "OpenDayCare Familia" [ref=e6] [cursor=pointer]:
+      - /url: index.dc.html
+      - generic [ref=e11]:
+        - generic [ref=e12]: OpenDayCare
+        - generic [ref=e13]: Familia
+    - navigation [ref=e14]:
+      - link "Feed" [ref=e15] [cursor=pointer]:
+        - /url: familia-feed.dc.html
+      - link "Resumen del día" [ref=e18] [cursor=pointer]:
+        - /url: resumen-dia.dc.html
+      - link "Mi cuenta" [ref=e22] [cursor=pointer]:
+        - /url: familia-cuenta.dc.html
+    - generic [ref=e27]:
+      - generic [ref=e28]: L
+      - generic [ref=e29]:
+        - generic [ref=e30]: Lucía Fernández
+        - generic [ref=e31]: Mamá de Mateo
+      - link "Cerrar sesión" [ref=e32] [cursor=pointer]:
+        - /url: login.dc.html
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - link "Volver al feed" [ref=e37] [cursor=pointer]:
+        - /url: familia-feed.dc.html
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]: M
+          - generic [ref=e43]:
+            - generic [ref=e44]: Mateo
+            - generic [ref=e45]: 09:40 · Maestra Caro · Sala Soles
+          - generic [ref=e46]: ACTIVIDAD
+        - paragraph [ref=e49]: Pintamos con témperas esta mañana. Mateo eligió el azul para todo y se concentró un montón mezclando colores.
+        - link "Foto · pintando con témperas" [ref=e50] [cursor=pointer]:
+          - /url: foto.dc.html
+        - generic [ref=e56]: A 5 personas les gusta
+        - generic [ref=e61]:
+          - button "Me encanta" [ref=e62] [cursor=pointer]
+          - generic [ref=e65]: Comentar
+      - generic [ref=e68]: COMENTARIOS · 2
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: L
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]: Lucía Fernández
+              - generic [ref=e75]: · mamá
+              - generic [ref=e76]: 10:02
+            - generic [ref=e77]: ¡Qué hermoso! En casa también le encanta el azul.
+        - generic [ref=e78]:
+          - generic [ref=e79]: C
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - generic [ref=e82]: Maestra Caro
+              - generic [ref=e83]: · maestra
+              - generic [ref=e84]: 10:15
+            - generic [ref=e85]: ¡Se nota mucho! Le guardamos la obra 🎨
+      - generic [ref=e86]:
+        - generic [ref=e87]: L
+        - textbox "Escribe un comentario…" [ref=e88]
+        - button [ref=e89] [cursor=pointer]
