@@ -1,7 +1,18 @@
+import { cookies } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { invitation } from "@/app/lib/data";
+import { createClient as createServerClient } from "@/utils/supabase/server";
 
-export default function ActivateAccountPage() {
+export default async function ActivateAccountPage() {
+  const cookieStore = await cookies();
+  const supabase = createServerClient(cookieStore);
+  const { data } = await supabase.auth.getClaims();
+
+  if (data?.claims) {
+    redirect("/");
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#FBF4EC] p-10">
       <div className="w-full max-w-[440px]">

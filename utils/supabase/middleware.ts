@@ -35,7 +35,26 @@ export async function updateSession(request: NextRequest) {
   });
 
   // Refresh the session before returning the response so refreshed cookies are preserved.
-  await supabase.auth.getClaims();
+  const { data } = await supabase.auth.getClaims();
+
+  const pathname = request.nextUrl.pathname;
+  const isAuthenticated = Boolean(data?.claims);
+  const isPublicRoute =
+    pathname === "/login" || pathname === "/activate-account";
+  const isPrivateRoute =
+    pathname === "/" || pathname === "/kids" || pathname.startsWith("/kids/");
+
+  if ((!isAuthenticated && isPrivateRoute) || (isAuthenticated && isPublicRoute)) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = isAuthenticated ? "/" : "/login";
+    redirectUrl.search = "";
+
+    const redirectResponse = NextResponse.redirect(redirectUrl);
+    supabaseResponse.cookies.getAll().forEach((cookie) => {
+      redirectResponse.cookies.set(cookie);
+    });
+    return redirectResponse;
+  }
 
   return supabaseResponse;
 }
