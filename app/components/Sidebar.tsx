@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { currentUser } from "@/app/lib/data";
 import CreatePostDialog from "@/app/components/CreatePostDialog";
+import LogoutButton from "@/app/components/LogoutButton";
 
 export type SidebarNavItem = "feed" | "kids";
 
@@ -136,25 +137,7 @@ export default function Sidebar({ activeItem }: { activeItem: SidebarNavItem }) 
               {currentUser.role}
             </span>
           </span>
-          <a
-            href="/login"
-            title="Cerrar sesión"
-            className="flex h-8 w-8 flex-none items-center justify-center rounded-[10px] bg-[#F6ECDF] text-[#94887B]"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" />
-            </svg>
-          </a>
+          <LogoutButton />
         </div>
       </div>
     </aside>
