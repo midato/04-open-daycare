@@ -9,9 +9,14 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 import { addKid } from "@/app/kids/actions";
-import { rooms } from "@/app/lib/data";
+import type { RoomRecord } from "@/app/kids/data";
 
-type FieldErrors = { fullName?: string; birthDate?: string; room?: string };
+type FieldErrors = {
+  fullName?: string;
+  birthDate?: string;
+  room?: string;
+  form?: string;
+};
 
 type BirthDateValidation = { date: Date } | { error: string };
 
@@ -93,11 +98,11 @@ function fieldBorder(hasError: boolean) {
   return hasError ? "border-[#D9583C]" : "border-[#EADFD0]";
 }
 
-export default function AddKidDialog() {
+export default function AddKidDialog({ rooms }: { rooms: RoomRecord[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [fullName, setFullName] = useState("");
   const [birthDate, setBirthDate] = useState("");
-  const [room, setRoom] = useState("");
+  const [roomId, setRoomId] = useState("");
   const [allergies, setAllergies] = useState("");
   const [medicalNotes, setMedicalNotes] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -108,7 +113,7 @@ export default function AddKidDialog() {
   const resetForm = useCallback(() => {
     setFullName("");
     setBirthDate("");
-    setRoom("");
+    setRoomId("");
     setAllergies("");
     setMedicalNotes("");
     setErrors({});
@@ -151,9 +156,9 @@ export default function AddKidDialog() {
       nextErrors.birthDate = birthDateValidation.error;
     }
 
-    if (!room) {
+    if (!roomId) {
       nextErrors.room = "Selecciona una sala.";
-    } else if (!rooms.includes(room)) {
+    } else if (!rooms.some((room) => room.id === roomId)) {
       nextErrors.room = "Selecciona una sala.";
     }
 
@@ -231,6 +236,11 @@ export default function AddKidDialog() {
               </div>
 
               <div className="px-[26px] py-6">
+                {errors.form ? (
+                  <p className={`mb-[18px] ${errorClassName}`}>
+                    {errors.form}
+                  </p>
+                ) : null}
                 <label
                   htmlFor="add-kid-full-name"
                   className={labelClassName}
@@ -292,20 +302,20 @@ export default function AddKidDialog() {
                     <div className="relative">
                       <select
                         id="add-kid-room"
-                        name="room"
-                        value={room}
+                        name="roomId"
+                        value={roomId}
                         onChange={(event) => {
-                          setRoom(event.target.value);
+                          setRoomId(event.target.value);
                           setErrors((prev) => withoutError(prev, "room"));
                         }}
                         className={`w-full appearance-none rounded-[14px] border-[1.5px] bg-white px-4 py-[13px] pr-10 text-[15px] font-bold outline-none ${fieldBorder(
                           Boolean(errors.room),
-                        )} ${room ? "text-[#3F362E]" : "text-[#B6A99B]"}`}
+                        )} ${roomId ? "text-[#3F362E]" : "text-[#B6A99B]"}`}
                       >
                         <option value="">Selecciona una sala…</option>
-                        {rooms.map((roomName) => (
-                          <option key={roomName} value={roomName}>
-                            {roomName}
+                        {rooms.map((room) => (
+                          <option key={room.id} value={room.id}>
+                            {room.name}
                           </option>
                         ))}
                       </select>

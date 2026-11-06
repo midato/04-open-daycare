@@ -1,9 +1,19 @@
 import AddKidDialog from "@/app/components/AddKidDialog";
 import KidCard from "@/app/components/KidCard";
 import Sidebar from "@/app/components/Sidebar";
-import { kids } from "@/app/lib/data";
+import { getKidsPageData, toKidViewModel } from "@/app/kids/data";
 
-export default function Kids() {
+export default async function Kids() {
+  const { rooms, children, error } = await getKidsPageData();
+  const roomNames = new Map(rooms.map((room) => [room.id, room.name]));
+  const kids = children.map((child, index) =>
+    toKidViewModel(
+      child,
+      roomNames.get(child.roomId) ?? "Sala no disponible",
+      index,
+    ),
+  );
+
   return (
     <div className="flex min-h-screen bg-[#F6ECDF]">
       <Sidebar activeItem="kids" />
@@ -18,7 +28,7 @@ export default function Kids() {
                 Niños
               </h1>
             </div>
-            <AddKidDialog />
+            <AddKidDialog rooms={rooms} />
           </div>
 
           <div className="mb-[22px] flex items-center gap-[11px] rounded-[14px] border border-[#ECE0D0] bg-[#FFFDF9] px-4 py-3">
@@ -52,11 +62,27 @@ export default function Kids() {
             <span className="h-px flex-1 bg-[#E7DAC8]" />
           </div>
 
-          <div className="grid grid-cols-2 gap-3.5">
-            {kids.map((kid) => (
-              <KidCard key={kid.id} kid={kid} />
-            ))}
-          </div>
+          {error ? (
+            <div className="rounded-[18px] border border-[#F0C8B9] bg-[#FFF4EE] px-5 py-6 text-[14px] text-[#A84B37]">
+              No pudimos cargar la información de los niños. Intenta de nuevo
+              más tarde.
+            </div>
+          ) : kids.length === 0 ? (
+            <div className="rounded-[18px] border border-dashed border-[#DCCBB7] bg-[#FFFDF9] px-6 py-12 text-center">
+              <h2 className="mb-2 font-display text-[21px] font-semibold text-[#3F362E]">
+                Aún no hay niños registrados
+              </h2>
+              <p className="m-0 text-[14px] leading-[1.5] text-[#94887B]">
+                Agrega al primer niño para comenzar a organizar tu guardería.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-3.5">
+              {kids.map((kid) => (
+                <KidCard key={kid.id} kid={kid} />
+              ))}
+            </div>
+          )}
         </div>
       </main>
     </div>

@@ -30,7 +30,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - `references/pantallas/*.dc.html` son mockups interactivos en español de la app (guardería / daycare); `references/screenshots/*.png` son sus capturas. Son la fuente de verdad del diseño/UI — ábrelos en el navegador (p. ej. con Playwright) para inspeccionar antes de implementar.
 - `references/pantallas/support.js` es generado (dc-runtime), nunca editar.
-- El copy de la UI va en **español mexicano** (tuteo). El diseño de referencia es la fuente de verdad de la *forma* (colores, tipografías, layout), no del *registro*: si un mockup trae voseo («Activá tu cuenta», «Creá tu contraseña», «Escribí un comentario…»), cámbialo a tuteo («Activa», «Crea», «Escribe») tanto en la implementación como en el `.dc.html`.
+- El copy de la UI va en **español mexicano** (tuteo). El diseño de referencia es la fuente de verdad de la _forma_ (colores, tipografías, layout), no del _registro_: si un mockup trae voseo («Activá tu cuenta», «Creá tu contraseña», «Escribí un comentario…»), cámbialo a tuteo («Activa», «Crea», «Escribe») tanto en la implementación como en el `.dc.html`.
 
 ## Spec Driven Development - Skills
 
@@ -42,6 +42,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## MCPs
 
+- Usa Context7 como herramienta para consultar documentación técnica actualizada de frameworks, bibliotecas y tecnologías que encuentres en este proyecto y necesites consultar, verificar y actualizar.
 - Las capturas de pantalla de Playwright y cualquier cosa relacionada con Playwright tiene que estar en la carpeta `.playwright-mcp` (gitignoreada). El MCP de Playwright ya está configurado en `opencode.json`.
 
 ## Reglas de código

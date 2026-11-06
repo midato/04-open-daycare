@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Sidebar from "@/app/components/Sidebar";
 import LinkParentDialog from "@/app/components/LinkParentDialog";
-import { kids, type KidParent } from "@/app/lib/data";
+import { getKidDetailData, toKidViewModel } from "@/app/kids/data";
+import { type KidParent } from "@/app/lib/data";
 
 const parentBadges: Record<
   KidParent["status"],
@@ -46,7 +47,11 @@ export default async function KidProfile({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const kid = kids.find((k) => k.id === id);
+  const detail = await getKidDetailData(id);
+  const kid =
+    detail.child && detail.room
+      ? toKidViewModel(detail.child, detail.room.name, 0)
+      : null;
 
   if (!kid) {
     return (
@@ -55,7 +60,9 @@ export default async function KidProfile({
         <main className="h-screen min-w-0 flex-1 overflow-y-auto">
           <div className="mx-auto flex w-full max-w-[820px] flex-col items-center px-10 pt-[34px] pb-20">
             <h1 className="mt-24 mb-0 font-display text-[30px] font-semibold text-[#3F362E]">
-              Niño no encontrado
+              {detail.error
+                ? "No pudimos cargar la información del niño"
+                : "Niño no encontrado"}
             </h1>
             <BackToKidsLink className="mt-4" />
           </div>
