@@ -28,7 +28,7 @@ export default function Home() {
               {currentUser.initial}
             </span>
             <span className="flex-1 text-[15px] text-[#A89A8B]">
-              Compartí un momento…
+              Comparte un momento…
             </span>
             <span className="flex h-[38px] w-[38px] flex-none items-center justify-center rounded-[12px] bg-[#FBE3D8] text-[#E0654A]">
               <svg
