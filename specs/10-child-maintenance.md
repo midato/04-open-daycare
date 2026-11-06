@@ -101,30 +101,30 @@ Las etiquetas visuales y los campos derivados de la vista —edad, inicial, colo
 
 ## Acceptance criteria
 
-- [ ] Existe una migración versionada que crea `public.room`, `public.child` y `public.child_status`.
-- [ ] `room` contiene `id`, `daycare_id`, `name` y `created_at`, con unicidad por daycare y nombre.
-- [ ] `child` contiene los campos definidos en el esquema de referencia y `status` inicia en `active`.
-- [ ] La migración no inserta registros en `child`.
-- [ ] El seed crea exactamente las 10 salas confirmadas por cada daycare existente.
-- [ ] El seed puede ejecutarse dos veces sin duplicar salas.
-- [ ] Después del seed, `child` permanece vacía.
-- [ ] RLS está habilitado en `room` y `child`.
-- [ ] Un usuario `staff` puede consultar las salas y niños de su daycare.
-- [ ] Un usuario `admin` puede consultar las salas y niños de su daycare.
-- [ ] Un usuario `parent` no puede consultar ni insertar niños.
-- [ ] Un usuario autenticado no puede consultar ni insertar datos de otro daycare.
-- [ ] Un usuario anónimo no puede consultar ni modificar estas tablas.
-- [ ] `/kids` consulta Supabase y no usa el array estático de ocho niños como fuente de datos.
-- [ ] `/kids` muestra un estado vacío con contador `0` cuando no existen niños.
-- [ ] El botón «Agregar niño» permanece disponible en el estado vacío.
-- [ ] El combo SALA muestra únicamente salas pertenecientes al daycare autenticado.
-- [ ] El formulario conserva sus cinco campos y las validaciones actuales de nombre, fecha y sala.
-- [ ] Un alta válida persiste un registro en `child` con `room_id`, `full_name`, `birth_date`, `enrolled_at` y `status = 'active'`.
-- [ ] Las alergias y notas opcionales se guardan correctamente sin impedir el alta cuando están vacías.
-- [ ] Tras guardar, la nueva tarjeta aparece en `/kids` y el contador refleja el total persistido.
-- [ ] `npx tsc --noEmit` termina sin errores.
-- [ ] `npx eslint app/` termina sin errores.
-- [ ] Las pruebas SQL cubren permisos permitidos y denegados.
+- [x] Existe una migración versionada que crea `public.room`, `public.child` y `public.child_status`.
+- [x] `room` contiene `id`, `daycare_id`, `name` y `created_at`, con unicidad por daycare y nombre.
+- [x] `child` contiene los campos definidos en el esquema de referencia y `status` inicia en `active`.
+- [x] La migración no inserta registros en `child`.
+- [x] El seed crea exactamente las 10 salas confirmadas por cada daycare existente.
+- [x] El seed puede ejecutarse dos veces sin duplicar salas.
+- [x] Después del seed, `child` permanece vacía.
+- [x] RLS está habilitado en `room` y `child`.
+- [x] Un usuario `staff` puede consultar las salas y niños de su daycare.
+- [x] Un usuario `admin` puede consultar las salas y niños de su daycare.
+- [x] Un usuario `parent` no puede consultar ni insertar niños.
+- [x] Un usuario autenticado no puede consultar ni insertar datos de otro daycare.
+- [x] Un usuario anónimo no puede consultar ni modificar estas tablas.
+- [x] `/kids` consulta Supabase y no usa el array estático de ocho niños como fuente de datos.
+- [x] `/kids` muestra un estado vacío con contador `0` cuando no existen niños.
+- [x] El botón «Agregar niño» permanece disponible en el estado vacío.
+- [x] El combo SALA muestra únicamente salas pertenecientes al daycare autenticado.
+- [x] El formulario conserva sus cinco campos y las validaciones actuales de nombre, fecha y sala.
+- [x] Un alta válida persiste un registro en `child` con `room_id`, `full_name`, `birth_date`, `enrolled_at` y `status = 'active'`.
+- [x] Las alergias y notas opcionales se guardan correctamente sin impedir el alta cuando están vacías.
+- [x] Tras guardar, la nueva tarjeta aparece en `/kids` y el contador refleja el total persistido.
+- [x] `npx tsc --noEmit` termina sin errores.
+- [x] `npx eslint app/` termina sin errores.
+- [x] Las pruebas SQL cubren permisos permitidos y denegados.
 
 ## Decisions
 
